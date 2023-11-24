@@ -353,13 +353,13 @@
         },
 
         loadCurrentSong: function () {
-            songTitle.textContent = this.currentSong.name
-            cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`
-            audio.src = this.currentSong.path
+            songTitle.textContent = this.currentSong?.name
+            cdThumb.style.backgroundImage = `url('${this.currentSong?.image}')`
+            audio.src = this.currentSong?.path
 
             //Lưu id bài hát đang phát
             const songIndex = app.songs.findIndex(function (song) {
-                return song.name === app.currentSong.name
+                return song.name === app.currentSong?.name
             })
             app.setConfig('saveCurrentIndex', songIndex)
         },
