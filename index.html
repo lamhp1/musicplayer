@@ -150,6 +150,7 @@
             // function handleOptionClick(event) {
             //     event.stopPropagation()
             // }
+            console.log(this.songs)
             const htmls = this.songs.map(function (song, index) {
                 return `
                         <div class="song ${index === app.currentIndex ? 'active' : ''}">
