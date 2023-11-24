@@ -343,7 +343,11 @@
 
             //điều chỉnh âm lượng
             volumeControl.oninput = function (e) {
-                audio.volume = volumeControl.value / 100
+                let volume = volumeControl.value / 100
+                if (isNaN(volume)) {
+                    volume = 0.1;
+                }
+                audio.volume = volume
                 app.setConfig('saveVolume', audio.volume)
             }
         },
@@ -372,7 +376,11 @@
 
             // giữ âm lượng khi tải lại
             volumeControl.setAttribute('value', this.config.saveVolume * 100)
-            audio.volume = this.config.saveVolume
+            let volume = this.config.saveVolume
+            if (isNaN(volume)) {
+                volume = 0.1;
+            }
+            audio.volume = volume
         },
 
         nextSong: function () {
